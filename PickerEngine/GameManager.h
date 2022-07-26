@@ -1,0 +1,30 @@
+#pragma once
+
+#ifndef _GAME_MANAGER_H
+#define _GAME_MANAGER_H
+
+#include "Commons.h"
+
+class GameManager {
+public:
+	GameManager(int pickCount);
+	~GameManager();
+
+	void Update();
+
+	void ResetSession();
+	int ModifyCount(int count);
+	int ModifyScore(int score);
+	void CheckState();
+
+	int GetPickCount() { return mPickCount; }
+	int GetCurrentScore() { return mCurrentScore; }
+
+private:
+	int mInitPickCount;
+	int mPickCount;
+	int mCurrentScore;
+	GameState mGameState;
+};
+
+#endif
