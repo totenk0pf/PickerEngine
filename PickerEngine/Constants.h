@@ -12,9 +12,12 @@
 #define ITEM_DISTANCE sf::Vector2f(20.0f, 20.0f)
 #define ITEM_SIZE sf::Vector2f(120.0f, 120.0f)
 #define INIT_ITEM_POS sf::Vector2f(20.0f, 20.0f)
+#define ITEM_DEFAULT_FONT_SIZE 48
+#define ITEM_CLICKED_FONT_SIZE 18
 
 #define BG_COLOR sf::Color(40, 40, 40, 255)
 #define ITEM_COLOR sf::Color(245, 195, 125, 255)
+#define ITEM_TEXT_COLOR sf::Color(150, 125, 100, 255)
 #define STROKE_COLOR sf::Color(195, 155, 95, 255)
 #define OUTLINE_THICKNESS -6.0f
 

@@ -4,6 +4,9 @@
 #define _GAME_MANAGER_H
 
 #include "Commons.h"
+#include "ItemManager.h"
+
+class ItemManager;
 
 class GameManager {
 public:
@@ -19,6 +22,9 @@ public:
 
 	int GetPickCount() { return mPickCount; }
 	int GetCurrentScore() { return mCurrentScore; }
+	GameState GetCurrentState() { return mGameState; }
+
+	ItemManager* mItemManager;
 
 private:
 	int mInitPickCount;

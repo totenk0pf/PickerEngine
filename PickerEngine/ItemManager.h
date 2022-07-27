@@ -8,6 +8,7 @@
 #include "Item.h"
 #include <vector>
 #include "GameManager.h"
+#include "Commons.h"
 #include <random>
 
 class GameManager;
@@ -15,18 +16,18 @@ class Item;
 
 class ItemManager {
 public:
-	ItemManager(int itemAmount, GameManager* gameManager);
+	ItemManager(int itemAmount, GameManager* gameManager, std::map<std::string, int> settingsData);
 	~ItemManager();
 
 	void Init(nlohmann::json data);
-	void Update();
+	void Update(sf::RenderWindow* window, sf::Event* event, GameState state);
 	void Render(sf::RenderWindow* window);
 
-	void LoadItems(nlohmann::json itemData);
+	void LoadItems(std::vector<nlohmann::json> itemData);
 	void GenerateItems();
-	void ClearItems();
+	void ResetItems();
 
-	Item PickItem(int index);
+	Item* PickItem(Item* item);
 
 private:
 	std::vector<Item> mItemArray;
@@ -34,6 +35,7 @@ private:
 	std::vector<Item> mGeneratedItems;
 	int mItemAmount;
 	GameManager* mGameManager;
+	std::map<std::string, int> mSettings;
 };
 
 #endif // !_ITEM_MANAGER_H
